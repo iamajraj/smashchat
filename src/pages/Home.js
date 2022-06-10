@@ -30,10 +30,9 @@ export default function Home() {
   const [text, setText] = useState('');
   const [img, setImg] = useState('');
   const [msgs, setMsgs] = useState([]);
-  const [selectedUser, setSelectedUser] = useState('');
   const [msgFrom, setMsgFrom] = useState(null);
 
-  const user1 = auth.currentUser.uid;
+  const user1 = auth?.currentUser?.uid;
 
   useEffect(() => {
     if (user) {
@@ -51,7 +50,6 @@ export default function Home() {
   }, []);
 
   const selectUser = async (user) => {
-    setSelectedUser(user);
     setChat(user);
 
     const user2 = user.uid;
