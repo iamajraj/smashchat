@@ -1,0 +1,376 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem 3rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+nav h3 a {
+  color: #000;
+  text-decoration: none;
+}
+nav div {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+nav div a {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  border-radius: 50px;
+  width: 120px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Register */
+.regLogin {
+  margin-top: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.regLogin_box {
+  width: 400px;
+  height: max-content;
+  background-color: #fff;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  border-radius: 0.4rem;
+}
+
+.regLogin_heading {
+  text-align: center;
+}
+.regLogin_heading h3 {
+  font-size: 18px;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #969696;
+}
+
+.regLogin_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.regLogin-email,
+.regLogin-password,
+.regLogin-name {
+  padding: 1rem;
+  width: 100%;
+  outline: none;
+  margin-top: 1rem;
+  border-radius: 40px;
+  border: 1px solid rgb(187, 187, 187);
+}
+.regLogin_errorMessage {
+  color: red;
+  font-size: 13px;
+  padding: 0;
+}
+.regLogin-btn {
+  margin: 1.5rem 0 1rem 0;
+}
+
+.btnLoading {
+  background: rgb(62, 155, 255);
+}
+
+/* Profile */
+.profile {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.profile_box {
+  width: max-content;
+  height: max-content;
+  margin-top: 4rem;
+  margin: 4rem 1rem 0;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  padding: 0 2rem;
+}
+.profile_container div {
+  align-self: center;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 1rem 0;
+  cursor: pointer;
+}
+
+.profile_container div .profile_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.2s;
+  border-radius: 50%;
+}
+
+.profile_container div:hover .profile_img {
+  opacity: 0.5;
+}
+
+.profile_container div:hover .profile_change-icon {
+  opacity: 1;
+}
+.profile_change-icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  opacity: 0;
+  color: rgb(73, 73, 73);
+  transition: opacity 0.2s ease-in-out;
+  cursor: pointer;
+}
+.profile_container {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #000;
+  padding-bottom: 1rem;
+}
+.profile_container > p {
+  margin: 0;
+  font-size: 16px;
+}
+.remove_profileImage {
+  width: 25px;
+  position: absolute;
+  bottom: 2px;
+  right: 5px;
+  color: red;
+}
+.profile_box > p {
+  text-align: end;
+  padding-bottom: 1rem;
+  margin-left: 2rem;
+}
+
+/* Home */
+.home_container {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  height: calc(100vh - 100px);
+  width: 100vw;
+}
+
+.users_container {
+  margin-top: 10px;
+  border-right: 1px solid #969696;
+  overflow-y: auto;
+}
+
+/* Users */
+.user_wrapper {
+  margin-bottom: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+.user_wrapper:hover {
+  background-color: #eeeeee;
+}
+.selected_user {
+  background-color: #eeeeee;
+}
+.user_info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.user_detail {
+  display: flex;
+  align-items: center;
+}
+.user_detail h4 {
+  margin-left: 10px;
+}
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #969696;
+}
+.user_status {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+.truncate {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+  width: 90%;
+  overflow: hidden;
+  text-overflow: hidden;
+}
+.truncate strong {
+  margin-right: 10px;
+}
+
+.unread {
+  margin-left: 10px;
+  background-color: rgb(62, 155, 255);
+  color: white;
+  padding: 2px 4px;
+  border-radius: 10px;
+}
+
+/* Messages Container */
+.messages_container {
+  width: 100%;
+  position: relative;
+}
+
+.messages_user {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #969696;
+}
+
+.no_conv {
+  font-size: 20px;
+  padding-left: 1.5rem;
+  text-align: center;
+  color: #969696;
+}
+
+/* Message Form */
+.message_form {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 20%;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.message_form input {
+  width: 40vw;
+  margin: 0px 10px;
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  background-color: whitesmoke;
+}
+
+.message_form .btn {
+  width: 100%;
+  padding: 10px 2rem;
+}
+
+/* Messages */
+.messages {
+  height: calc(100vh - 260px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-bottom: 1px solid whitesmoke;
+}
+.message_wrapper {
+  margin-top: 5px;
+  padding: 0 5px;
+}
+
+.message_wrapper img {
+  width: 100%;
+  border-radius: 5px;
+}
+.message_wrapper p {
+  padding: 10px;
+  display: inline-block;
+  max-width: 50%;
+  text-align: left;
+  border-radius: 5px;
+}
+.message_wrapper small {
+  display: inline-block;
+  margin-top: 15px;
+  opacity: 0.8;
+}
+.message_wrapper.own {
+  text-align: right;
+}
+.me {
+  text-align: right;
+  color: white;
+  background: rgb(62, 155, 255);
+}
+.friend {
+  background: rgb(133, 133, 133);
+  color: white;
+}
+@media screen and (max-width: 650px) {
+  nav {
+    justify-content: space-between;
+    padding: 1rem 1rem;
+  }
+  .initial_screen {
+    flex-direction: column;
+  }
+  .initial_screen img {
+    width: 70% !important;
+  }
+  .user_detail h4 {
+    display: none;
+  }
+}
+@media screen and (max-width: 500px) {
+  .message_form .btn {
+    padding: 10px 10px;
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 350px) {
+  nav {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 450px) {
+  nav {
+    padding-top: 0.5rem;
+  }
+  nav h3 {
+    position: relative;
+  }
+  nav h3 a {
+    font-size: 14px;
+  }
+  nav div {
+    gap: 0.5rem;
+  }
+  nav div a {
+    width: max-content;
+    height: 34px;
+  }
+  .regLogin_box {
+    width: 100%;
+    margin: 0 1rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .message_form {
+    left: 0;
+    padding: 0 1rem;
+  }
+  .message_form input {
+    flex: 1;
+  }
+}
